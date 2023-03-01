@@ -5,6 +5,13 @@ Go.
 
 It can be utilized as a min or max heap, depending on the implementation of the `Item.Less` method.
 
+| Operation  | Time Complexity (worst case) |
+|------------|------------------------------|
+| Insert     | O(1)                         |
+| Find min   | O(1)                         |
+| Delete min | O(logN)                      |
+| Merge      | O(1)                         |
+
 ### Internal Representation
 
 The heap itself is internally represented as a doubly linked circular list of nodes.
