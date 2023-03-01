@@ -1,13 +1,5 @@
 package fibheap
 
-import (
-	"errors"
-)
-
-var (
-	errInvalidSwap = errors.New("replacement item is not a valid swap")
-)
-
 // Heap is an instance of the Fibonacci heap
 type Heap struct {
 	size  uint  // number of nodes
@@ -153,6 +145,7 @@ func (h *Heap) consolidate() {
 
 	currentNode := h.entry
 	lastNode := h.entry.left
+
 	for currentNode != lastNode {
 		next := currentNode.right
 
@@ -175,6 +168,7 @@ func (h *Heap) consolidate() {
 		}
 
 		h.entry.addSibling(n)
+
 		if n.item.Less(h.entry.item) {
 			h.entry = n
 		}

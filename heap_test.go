@@ -14,6 +14,7 @@ func generateMockItems(count int) []*mockItem {
 
 	for i := 0; i < count; i++ {
 		items[i] = &mockItem{
+			//nolint:gosec
 			value: rand.Intn(count),
 		}
 	}
@@ -113,7 +114,8 @@ func TestHeap_Peek(t *testing.T) {
 
 		assert.Equal(t, uint(len(items)), h.Size())
 
-		assert.Equal(t, max.value, h.Peek().(*mockItem).value)
+		peeked, _ := h.Peek().(*mockItem)
+		assert.Equal(t, max.value, peeked.value)
 	})
 }
 
@@ -217,7 +219,7 @@ func TestHeap_PushPop(t *testing.T) {
 
 		// Pop them off one by one
 		for _, item := range minSorted {
-			popped := h.Pop().(*mockItem)
+			popped, _ := h.Pop().(*mockItem)
 			assert.Equal(t, item.value, popped.value)
 		}
 
@@ -254,7 +256,7 @@ func TestHeap_PushPop(t *testing.T) {
 
 		// Pop them off one by one
 		for _, item := range maxSorted {
-			popped := h.Pop().(*mockItem)
+			popped, _ := h.Pop().(*mockItem)
 			assert.Equal(t, item.value, popped.value)
 		}
 
