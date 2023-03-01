@@ -2,15 +2,11 @@ package fibheap
 
 type lessDelegate func(Item) bool
 
-// TODO remove
-type stringDelegate func() string
-
 // mockItem is a mockable Item
 type mockItem struct {
 	value int
 
-	lessFn   lessDelegate
-	stringFn stringDelegate
+	lessFn lessDelegate
 }
 
 func (m *mockItem) Less(i Item) bool {
@@ -24,13 +20,4 @@ func (m *mockItem) Less(i Item) bool {
 	}
 
 	return m.value < other.value
-}
-
-// TODO remove
-func (m *mockItem) String() string {
-	if m.stringFn != nil {
-		return m.stringFn()
-	}
-
-	return ""
 }
