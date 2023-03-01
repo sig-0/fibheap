@@ -1,6 +1,7 @@
 ## Overview
 
-`fibheap` is small and simple Fibonacci Heap implementation, written in Go.
+`fibheap` is small and simple [Fibonacci Heap](https://en.wikipedia.org/wiki/Fibonacci_heap) implementation, written in
+Go.
 
 It can be utilized as a min or max heap, depending on the implementation of the `Item.Less` method.
 
