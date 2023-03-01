@@ -1,5 +1,7 @@
 ## Overview
 
+[![codecov](https://codecov.io/gh/madz-lab/fibheap/branch/main/graph/badge.svg?token=U85BAYBPPJ)](https://codecov.io/gh/madz-lab/fibheap)
+
 `fibheap` is small and simple [Fibonacci Heap](https://en.wikipedia.org/wiki/Fibonacci_heap) implementation, written in
 Go.
 
