@@ -5,6 +5,12 @@ Go.
 
 It can be utilized as a min or max heap, depending on the implementation of the `Item.Less` method.
 
+Fibonacci heaps are a type of heap data structure that provide faster insertion and deletion operations compared to
+binary heaps, but at the cost of increased space complexity. Depending on the concrete implementation of the binary
+heap,
+it is possible to achieve better results compared to Fibonacci heaps (ex. `container/heap`), because of underlying array
+optimizations.
+
 | Operation  | Time Complexity (worst case) |
 |------------|------------------------------|
 | Insert     | O(1)                         |
