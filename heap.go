@@ -1,5 +1,7 @@
 package fibheap
 
+import "math"
+
 // Heap is an instance of the Fibonacci heap
 type Heap struct {
 	size  uint  // number of nodes
@@ -119,7 +121,10 @@ func (h *Heap) Pop() Item {
 
 // consolidate consolidates the heap by simplifying and merging
 func (h *Heap) consolidate() {
-	degreeMap := make(map[uint]*node)
+	// The max degree is always bound by logN
+	maxDegree := int(math.Floor(math.Log(float64(h.size)) / math.Log((1+math.Sqrt(5))/2)))
+
+	degreeMap := make([]*node, maxDegree+2)
 
 	mergeTrees := func(currentNode *node) {
 		currentNode.removeFromSiblings()
@@ -136,7 +141,8 @@ func (h *Heap) consolidate() {
 			}
 
 			h.linkNodes(currentNode, otherNode)
-			delete(degreeMap, degree)
+
+			degreeMap[degree] = nil
 			degree++
 		}
 
@@ -161,6 +167,10 @@ func (h *Heap) consolidate() {
 	h.entry = nil
 
 	for _, n := range degreeMap {
+		if n == nil {
+			continue
+		}
+
 		if h.entry == nil {
 			h.entry = n
 

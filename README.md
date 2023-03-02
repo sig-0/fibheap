@@ -36,14 +36,14 @@ goos: darwin
 goarch: amd64
 pkg: github.com/madz-lab/fibheap
 cpu: Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz
-BenchmarkHeap_Push1000-8      	   27565	     43614 ns/op
-BenchmarkHeap_Push10000-8     	    2434	    486338 ns/op
-BenchmarkHeap_Push100000-8    	     196	   6143537 ns/op
-BenchmarkHeap_Push1000000-8   	      20	  53343451 ns/op
-BenchmarkHeap_Pop1000-8       	    1279	    930076 ns/op
-BenchmarkHeap_Pop10000-8      	      84	  14635011 ns/op
-BenchmarkHeap_Pop100000-8     	       5	 251245856 ns/op
-BenchmarkHeap_Pop1000000-8    	       1	4416738056 ns/op
+BenchmarkHeap_Push1000-8           25191             48070 ns/op
+BenchmarkHeap_Push10000-8           2234            521024 ns/op
+BenchmarkHeap_Push100000-8           178           6716704 ns/op
+BenchmarkHeap_Push1000000-8           18          60324315 ns/op
+BenchmarkHeap_Pop1000-8             2694            428768 ns/op
+BenchmarkHeap_Pop10000-8             189           6308310 ns/op
+BenchmarkHeap_Pop100000-8              9         115665221 ns/op
+BenchmarkHeap_Pop1000000-8             1        2242760745 ns/op
 PASS
-ok  	github.com/madz-lab/fibheap	17.905s
+ok      github.com/madz-lab/fibheap     14.434s
 ```
